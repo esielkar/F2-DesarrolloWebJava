@@ -3,7 +3,10 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.DynamicTest;
@@ -29,5 +32,18 @@ public class CalculadoraTest {
             int actual = calc.suma((int) arg[0], (int) arg[1]);
             assertEquals(expected, actual, "La suma de " + Arrays.toString(arg) + " debe ser " + expected);
         })).toList();
+    }
+
+    @TestFactory
+    Stream<DynamicTest> testMultiplica(){
+        List<Integer> input = IntStream.range(0,1001)
+                .boxed()
+                .collect(Collectors.toList());
+
+        List<Integer> output = input.stream().map(n -> n * 10).collect(Collectors.toList());
+
+        return input.stream().map(n -> dynamicTest("Numero " + n +" multiplicado por 10 : ", () ->{
+            assertEquals(calc.multiplica(n,10),output.get(n));
+        }));
     }
 }
