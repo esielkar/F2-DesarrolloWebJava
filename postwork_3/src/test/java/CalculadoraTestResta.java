@@ -26,6 +26,7 @@ class CalculadoraTestResta {
                     return DynamicTest.dynamicTest("Resta: " + n,
                             () -> assertEquals(calculadora.resta(n, 1), output.get(n)));
                 });
+
     }
 
 
