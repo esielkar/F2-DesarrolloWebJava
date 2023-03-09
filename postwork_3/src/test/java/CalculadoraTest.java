@@ -45,6 +45,5 @@ public class CalculadoraTest {
         return input.stream().map(n -> dynamicTest("Numero " + n +" multiplicado por 10 : ", () ->{
             assertEquals(calc.multiplica(n,10),output.get(n));
         }));
-
     }
 }
