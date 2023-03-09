@@ -19,7 +19,7 @@ Implementar todos los postwork del Equipo 4 de la Fase 2 del curso de Desarrollo
 Tarea | Descripción
 ------------ | -------------
 Postwork 1 | Compilar un archivo en lenguaje Markdown a HTML.
-Postwork 2 | Resolver un porblema utilizando patrones de diseño (Decorator).
+Postwork 2 | Resolver un problema utilizando patrones de diseño (Decorator).
 Postwork 3 | Utilizar JUnit y anotaciones para probar código.
 Postwork 4 | Implementar una aplicación de línea de comandos utilizando Spring Boot.
 
