@@ -22,6 +22,8 @@ Postwork 1 | Compilar un archivo en lenguaje Markdown a HTML.
 Postwork 2 | Resolver un problema utilizando patrones de diseño (Decorator).
 Postwork 3 | Utilizar JUnit y anotaciones para probar código.
 Postwork 4 | Implementar una aplicación de línea de comandos utilizando Spring Boot.
+Postwork 5 | Integración del nuevo código utilizando Inyección de Dependencias.
+
 
 
 ## More...
