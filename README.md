@@ -5,7 +5,7 @@
  - [Esiel Kevin Arizmendi Ramírez](https://github.com/EsielKar)
  - [Héctor Gerardo Bravo Pacheco](https://github.com/HectorGbravo)
  - [Claudia0812.. pendiente editar nombre completo] 
- - [Roberto Sandoval ... pendiente editar nombre completo]
+ - [José Roberto Sandoval Lara]
  
 ### Requisitos ⚙️
 - IntelliJ IDEA 2022.3 (La versión Community es la utilizada)
