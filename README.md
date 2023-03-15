@@ -6,6 +6,7 @@
  - [Héctor Gerardo Bravo Pacheco](https://github.com/HectorGbravo)
  - [Claudia0812.. pendiente editar nombre completo] 
  - [José Roberto Sandoval Lara]
+ - [Jorge Abraham Hilario Jimenez Lizarraga](https://github.com/carnavalito)
  
 ### Requisitos ⚙️
 - IntelliJ IDEA 2022.3 (La versión Community es la utilizada)
