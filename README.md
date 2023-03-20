@@ -4,7 +4,7 @@
  ### Integrantes 🧑🏻‍💻
  - [Esiel Kevin Arizmendi Ramírez](https://github.com/EsielKar)
  - [Héctor Gerardo Bravo Pacheco](https://github.com/HectorGbravo)
- - [Claudia0812.. pendiente editar nombre completo] 
+ - [Claudia Peralta Álvarez](https://github.com/clau0812)
  - [José Roberto Sandoval Lara]
  - [Jorge Abraham Hilario Jimenez Lizarraga](https://github.com/carnavalito)
  
