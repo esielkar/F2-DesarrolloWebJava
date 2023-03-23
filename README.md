@@ -29,6 +29,7 @@ Postwork 4 | Implementar una aplicación de línea de comandos utilizando Spring
 Postwork 5 | Integración del nuevo código utilizando Inyección de Dependencias.
 Postwork 6 | Utilizacion del patron MVC.
 Postwork 7 | Integración de Thymeleaf con Spring Boot.
+Postwork 8 | Integración de Spring Data JPA.
 
 
 
