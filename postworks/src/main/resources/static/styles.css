@@ -1,0 +1,17 @@
+img {
+    width: 3%;
+    height: 5%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+
+#logo-santander{
+    width: 10%;
+    height: 7%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+span{
+    font-size: small;
+}

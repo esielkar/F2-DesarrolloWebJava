@@ -92,20 +92,15 @@ public class AgendaController {
         return "index";
     }
 
-    @PostMapping("/registro")
+    @PostMapping("/registra")
     public ModelAndView registra(@Valid Persona persona , Errors errors) {
-
-        String vistaResultado = "index";
-        if (errors.hasErrors()){
-            vistaResultado = "index";
-        } else {
+        ModelAndView mav = new ModelAndView("index");
+        if (!errors.hasErrors()){
             agendaRepository.save(persona);
+            mav.addObject("listaPersonas", agendaRepository.findAll());
+        } else {
+            mav.setViewName("index");
         }
-
-        ModelAndView mav = new ModelAndView(vistaResultado);
-        mav.addObject("listaPersonas", agendaRepository.findAll());
         return mav;
     }
-
-
 }
