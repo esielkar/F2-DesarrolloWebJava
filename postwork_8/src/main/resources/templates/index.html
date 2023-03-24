@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" th:href="@{styles.css}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{scripts.js}"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid d-flex align-items-center">
+
+                <img th:src="@{beto.png}" class="mw-100" height="auto" alt="Imagen responsive">
+                <img id="logo-santander" th:src="@{logo-santander.png}" class="mw-100" height="auto"
+                    alt="Imagen responsive">
+                <a class="navbar-brand flex-grow-1 fw-bold fs-2" href="#"> | Proyecto</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="container d-flex justify-content-center mt-2">
+        <p class="fs-3">Registro</p>
+    </div>
+
+    <div class="container justify-content-center d-flex mb-4">
+        <form th:action="@{/index}" th:object="${persona}" method="post">
+
+            <div class="mt-3 flex-grow-1">
+                <i class="fas fa-user"></i> &nbsp; <label for="name" class="form-label">Nombre</label>
+                <input placeholder="Beto" type="text" class="form-control" id="name" th:field="*{nombre}">
+            </div>
+
+
+            <span class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errorclass="error"
+                th:errors="*{nombre}"></span>
+
+
+            <div class="mt-4">
+                <i class="fas fa-phone"></i> &nbsp; <label for="telephone" class="form-label">Telefono</label>
+                <input placeholder="##-####-####" type="text" class="form-control" id="telephone"
+                    th:field="*{telefono}">
+            </div>
+
+            <span th:if="${#fields.hasErrors('telefono')}" th:errorclass="error" th:errors="*{telefono}"
+                class="text-danger"></span>
+
+            <div class="container justify-content-center d-flex mt-4">
+                <button type="submit" class="btn btn-primary w-50"> guardar </button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <div class="container d-flex justify-content-center">
+        <p class="fs-3">Agenda</p>
+    </div>
+
+
+    <div th:if="${not #lists.isEmpty(listaPersonas)}" class="container d-flex justify-content-center table-responsive w-50">
+
+        <table class="table border">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID Contacto</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="registro:${listaPersonas}">
+                    <td th:text="${registro.id}"></td>
+                    <td th:text="${registro.nombre}"></td>
+                    <td th:text="${registro.telefono}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
