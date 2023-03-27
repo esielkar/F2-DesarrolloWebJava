@@ -100,6 +100,7 @@ public class AgendaController {
             mav.addObject("listaPersonas", agendaRepository.findAll());
         } else {
             mav.setViewName("index");
+            mav.addObject("listaPersonas", agendaRepository.findAll());
         }
         return mav;
     }
