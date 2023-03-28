@@ -2,6 +2,7 @@ package com.equipo4.postworks.controller;
 
 import com.equipo4.postworks.model.Persona;
 import com.equipo4.postworks.persistence.AgendaRepository;
+import com.equipo4.postworks.persistence.EmergenciaRepository;
 import com.equipo4.postworks.service.AgendaService;
 import com.equipo4.postworks.service.FormateadorTelefono;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +32,12 @@ public class AgendaController {
 
     /* POSTWORK 8*/
     private final AgendaRepository agendaRepository;
+    private final EmergenciaRepository emergenciaRepository;
 
     @Autowired
-    public AgendaController(AgendaRepository agendaRepository) {
+    public AgendaController(AgendaRepository agendaRepository, EmergenciaRepository emergenciaRepository) {
         this.agendaRepository = agendaRepository;
+        this.emergenciaRepository = emergenciaRepository;
     }
 
 
@@ -88,19 +91,22 @@ public class AgendaController {
     public String formularioRegistro(Model model) {
         model.addAttribute("persona", new Persona());
         model.addAttribute("listaPersonas", agendaRepository.findAll());
-
+        /*Esta linea muestra los numeros de emergencia*/
+        model.addAttribute("numEmergencias", emergenciaRepository.findAll());
         return "index";
     }
 
-    @PostMapping("/registra")
+    @PostMapping("/registro")
     public ModelAndView registra(@Valid Persona persona , Errors errors) {
         ModelAndView mav = new ModelAndView("index");
         if (!errors.hasErrors()){
             agendaRepository.save(persona);
-            mav.addObject("listaPersonas", agendaRepository.findAll());
         } else {
             mav.setViewName("index");
         }
+        mav.addObject("listaPersonas", agendaRepository.findAll());
+        /*Esta linea muestra los numeros de emergencia*/
+        mav.addObject("numEmergencias", emergenciaRepository.findAll());
         return mav;
     }
 }

@@ -12,7 +12,6 @@ public class ValidadorTelefono {
         return PATTERN_TELEFONO.matcher(telefono).matches();
     }
 
-
     public String limpiaNumero(String telefono) {
         return telefono.replaceAll("[^0-9]", "");
     }

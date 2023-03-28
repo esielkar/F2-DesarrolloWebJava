@@ -35,7 +35,7 @@
 </div>
 
 <div class="container justify-content-center d-flex mb-4">
-    <form th:action="@{/registra}" th:object="${persona}" method="post">
+    <form th:action="@{/registro}" th:object="${persona}" method="post">
 
         <div class="mt-3 flex-grow-1">
             <i class="fas fa-user"></i> &nbsp; <label for="name" class="form-label">Nombre</label>
@@ -69,7 +69,6 @@
     <p class="fs-3">Agenda</p>
 </div>
 
-
 <div th:if="${not #lists.isEmpty(listaPersonas)}" class="container d-flex justify-content-center table-responsive w-50">
 
     <table class="table border">
@@ -89,6 +88,27 @@
         </tbody>
     </table>
 </div>
+
+<!--Esta tabla es para mostrar los números de telefono que son precargados automaticamente descomentar si se requiere ver el funcionamiento-->
+<!--<div th:if="${not #lists.isEmpty(numEmergencias)}" class="container d-flex justify-content-center table-responsive w-50">-->
+
+<!--    <table class="table border">-->
+<!--        <thead class="table-dark">-->
+<!--        <tr>-->
+<!--            <th scope="col">ID Contacto</th>-->
+<!--            <th scope="col">Nombre</th>-->
+<!--            <th scope="col">Telefono</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="registro:${numEmergencias}">-->
+<!--            <td th:text="${registro.id}"></td>-->
+<!--            <td th:text="${registro.descripcion}"></td>-->
+<!--            <td th:text="${registro.telefono}"></td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</div>-->
 
 </body>
 

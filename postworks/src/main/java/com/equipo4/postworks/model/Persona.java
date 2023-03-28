@@ -12,9 +12,9 @@ public class Persona implements Comparable<Persona> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = " El nombre de usuario es obligatorio.")
+    @NotBlank(message = "El nombre del contacto es obligatorio.")
     private String nombre;
-    @Pattern(regexp = "^(\\d{2,4}[- .]?){2}\\d{4}$", message = " El teléfono debe de tener un formato de ##-####-####")
+    @Pattern(regexp = "^(\\d{2,4}[- .]?){2}\\d{4}$", message = "El formato del telefono debe ser ##-####-####")
     private String telefono;
 
     public Persona() {}
