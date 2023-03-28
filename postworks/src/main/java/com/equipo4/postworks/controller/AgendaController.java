@@ -103,7 +103,6 @@ public class AgendaController {
             agendaRepository.save(persona);
         } else {
             mav.setViewName("index");
-            mav.addObject("listaPersonas", agendaRepository.findAll());
         }
         mav.addObject("listaPersonas", agendaRepository.findAll());
         /*Esta linea muestra los numeros de emergencia*/
